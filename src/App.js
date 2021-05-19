@@ -31,10 +31,15 @@ function App() {
     let ygridcoordFinal = Math.abs(ygridcoord - ygridcoordFloor) <= Math.abs(ygridcoord - ygridcoordCeil) ? ygridcoordFloor : ygridcoordCeil
     let existingPoint = points.find((point) => (point.x === xgridcoordFinal && point.y === ygridcoordFinal));
     if (existingPoint === undefined) {
+      // points.push({ id: points.length + 1, x: xgridcoordFinal, y: ygridcoordFinal })
       setPoints([...points, { id: points.length + 1, x: xgridcoordFinal, y: ygridcoordFinal }])
-    }
+      }
   }
   const [points, setPoints] = useState([])
+  let width = visualViewport.width;
+  let height = visualViewport.height;
+  console.log(width);
+  console.log(height);
   return (
 
     <div className="flex-center"
